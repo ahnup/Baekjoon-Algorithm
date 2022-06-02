@@ -1,9 +1,12 @@
-a, b =(int, input().split())
+a, b = map(int, input().split())
 c = int(input())
-b += c
-if  b >= 60 :
-    b = 60 -b
-    a += 1
-    if a >= 24 :
-        a = 24-a
-print(hour, b)
+h = c // 60
+m = c % 60
+hour = a + h
+minute = b + m
+if  minute >= 60 :
+    minute -= 60
+    hour += 1
+if hour >= 24 :
+    hour -= 24 
+print(hour, minute)
